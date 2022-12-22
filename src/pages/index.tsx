@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Button from "../components/Button/Button";
 import Question from "../components/Question/Question";
 import AnswerModel from "../models/answerModel";
 import QuestionModel from "../models/questionModel";
@@ -15,24 +16,37 @@ const questionMock = new QuestionModel(
   true
 );
 
-export default function Home() {
+const Home = () => {
   const [question, setQuestion] = useState(questionMock);
 
   const onResponse = (index: number) => {
     setQuestion(question.answerWith(index));
-    console.log(index);
+  };
+
+  const timeOver = () => {
+    if (question.unanswered) {
+      setQuestion(question.answerWith(-1));
+    }
   };
 
   return (
     <div
       style={{
         display: "flex",
+        flexDirection: "column",
         justifyContent: "center",
         alignItems: "center",
         height: "100vh",
       }}
     >
-      <Question question={question} onResponse={onResponse} />
+      <Question
+        question={question}
+        onResponse={onResponse}
+        timeOver={timeOver}
+      />
+      <Button text="Next" href="/result" />
     </div>
   );
-}
+};
+
+export default Home;

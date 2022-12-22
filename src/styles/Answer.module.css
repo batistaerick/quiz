@@ -5,6 +5,7 @@
   width: 80%;
   height: 100px;
   margin: 10px;
+  perspective: 1000px;
 }
 
 .answerContent {
@@ -27,6 +28,28 @@
   padding: 15px;
   color: #000;
   background-color: #fff;
+}
+
+.back > div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+  border-radius: 12px;
+}
+
+.correct {
+  background-color: #3baa6d;
+}
+
+.wrong {
+  background-color: #e44a4c;
+}
+
+.correct .value,
+.wrong .value {
+  font-size: 1.5rem;
 }
 
 .letter {

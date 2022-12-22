@@ -35,6 +35,10 @@ class QuestionModel {
     return this.#gotItRight;
   }
 
+  get unanswered() {
+    return !this.answered;
+  }
+
   get answered() {
     for (let answer of this.#answers) {
       if (answer.revealed) {
