@@ -10,14 +10,14 @@ interface ButtonProps {
 }
 
 const Button: FC<ButtonProps> = ({ href, text, onClick }) => {
-  const button = () => {
+  const renderButton = () => {
     return (
-      <button className={styles.button} onClick={onClick}>
+      <button className={styles.customButton} onClick={onClick}>
         {text}
       </button>
     );
   };
-  return href ? <Link href={href}>{button()}</Link> : button();
+  return href ? <Link href={href}>{renderButton()}</Link> : renderButton();
 };
 
 export default Button;

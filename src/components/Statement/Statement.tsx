@@ -1,6 +1,6 @@
-import { FC } from "react";
-
 import styles from "../../styles/Statement.module.css";
+
+import { FC } from "react";
 
 interface StatementProps {
   text: string;

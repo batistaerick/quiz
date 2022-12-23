@@ -1,5 +1,5 @@
-import shuffle from "../functions/arrays";
-import AnswerModel from "./answerModel";
+import { shuffle } from "../functions/arrays";
+import AnswerModel from "./answer";
 
 class QuestionModel {
   #id: number;
@@ -11,7 +11,7 @@ class QuestionModel {
     id: number,
     statement: string,
     answers: AnswerModel[],
-    gotItRight: boolean
+    gotItRight: boolean = false
   ) {
     this.#id = id;
     this.#statement = statement;
@@ -65,6 +65,18 @@ class QuestionModel {
       this.#statement,
       scrambledAnswers,
       this.#gotItRight
+    );
+  }
+
+  static fromObject(object: QuestionModel): QuestionModel {
+    const answers = object.answers.map((answer) =>
+      AnswerModel.fromObject(answer)
+    );
+    return new QuestionModel(
+      object.id,
+      object.statement,
+      answers,
+      object.gotItRight
     );
   }
 

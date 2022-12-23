@@ -4,6 +4,7 @@ import { CountdownCircleTimer } from "react-countdown-circle-timer";
 import styles from "../../styles/Timer.module.css";
 
 interface TimerProps {
+  key: any;
   duration: number;
   timeOver: () => void;
 }
@@ -16,8 +17,11 @@ const Timer: FC<TimerProps> = ({ duration, timeOver }) => {
         size={120}
         isPlaying
         onComplete={timeOver}
-        colors={["#BCE596", "#F7B801", "#ED827A"]}
-        colorsTime={[9, 6, 0]}
+        colors={[
+          ["#BCE596", 0.33],
+          ["#F7B801", 0.33],
+          ["#ED827A", 0.33],
+        ]}
       >
         {({ remainingTime }) => remainingTime}
       </CountdownCircleTimer>

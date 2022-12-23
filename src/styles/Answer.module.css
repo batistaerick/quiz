@@ -1,7 +1,6 @@
 .answer {
   display: flex;
   min-width: 500px;
-  align-self: stretch;
   width: 80%;
   height: 100px;
   margin: 10px;
@@ -12,6 +11,12 @@
   position: relative;
   display: flex;
   flex: 1;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.answerRevealed.answerContent {
+  transform: rotateY(180deg);
 }
 
 .front,
@@ -20,6 +25,8 @@
   display: flex;
   height: 100%;
   width: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
 }
 
 .front {
@@ -28,6 +35,10 @@
   padding: 15px;
   color: #000;
   background-color: #fff;
+}
+
+.back {
+  transform: rotateY(180deg);
 }
 
 .back > div {
@@ -56,12 +67,12 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  border-radius: 20px;
   height: 40px;
   width: 40px;
+  border-radius: 20px;
   font-size: 1.3rem;
   font-weight: 700;
-  margin-right: 15px;
+  margin-right: 20px;
   color: #fff;
 }
 

@@ -1,5 +1,5 @@
-import AnswerModel from "../../models/answerModel";
-import QuestionModel from "../../models/questionModel";
+import AnswerModel from "../../models/answer";
+import QuestionModel from "../../models/question";
 
 const questions: QuestionModel[] = [
   new QuestionModel(

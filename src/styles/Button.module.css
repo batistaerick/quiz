@@ -1,4 +1,4 @@
-.button {
+.customButton {
   color: #fff;
   border-radius: 8px;
   font-weight: 200;
@@ -7,4 +7,10 @@
   padding: 10px 25px;
   background-color: #9885f0;
   margin-top: 40px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.customButton:hover {
+  transform: scale(1.1);
 }
