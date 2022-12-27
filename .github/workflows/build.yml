@@ -5,10 +5,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - name: Install Nodejs and yarn
+      - name: Set up Nodejs 18
         uses: actions/setup-node@v3
         with:
           node-version: 18
+      - name: Install yarn
         run: npm install --global yarn
       - name: Install dependencies
         run: yarn
@@ -19,10 +20,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - name: Install Nodejs and yarn
+      - name: Set up Nodejs 18
         uses: actions/setup-node@v3
         with:
           node-version: 18
+      - name: Install yarn
         run: npm install --global yarn
       - name: Install dependencies
         run: yarn
