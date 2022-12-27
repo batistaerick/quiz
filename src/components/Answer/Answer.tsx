@@ -20,8 +20,12 @@ const Answer: FC<AnswerProps> = ({
 }) => {
   const answerRevealed = answer.revealed ? styles.answerRevealed : "";
 
+  const onClick = () => {
+    providedAnswer(index);
+  };
+
   return (
-    <div className={styles.answer} onClick={() => providedAnswer(index)}>
+    <div className={styles.answer} onClick={onClick}>
       <div className={`${answerRevealed} ${styles.answerContent}`}>
         <div className={styles.front}>
           <div
